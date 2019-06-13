@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="562.0" style="-fx-background-color: #3D4956;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.MainController">
+   <children>
+      <AnchorPane fx:id="topPanel" prefHeight="97.0" prefWidth="562.0" style="-fx-background-color: #3D4956;">
+         <children>
+            <ImageView fx:id="btnImport" fitHeight="80.0" fitWidth="73.0" layoutX="46.0" layoutY="12.0" onMouseClicked="#handleButtonAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons-import-csv.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btnSettings" fitHeight="80.0" fitWidth="73.0" layoutX="173.0" layoutY="12.0" onMouseClicked="#handleButtonAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/settings.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btnForecast" fitHeight="80.0" fitWidth="73.0" layoutX="310.0" layoutY="12.0" onMouseClicked="#getForecastResults" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/forecast.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btnExit" fitHeight="80.0" fitWidth="73.0" layoutX="440.0" layoutY="12.0" onMouseClicked="#handleButtonAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/exit.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="importData" layoutY="94.0" prefHeight="459.0" prefWidth="562.0" style="-fx-background-color: #3D4956;" visible="false">
+         <children>
+            <TextField fx:id="fileName" layoutX="281.0" layoutY="161.0" prefHeight="49.0" prefWidth="249.0" style="-fx-background-color: #95D4E8; -fx-border-color: #A684A9; -fx-border-radius: 5; -fx-background-radius: 5; -fx-background-insets: 1; -fx-border-width: 3;" />
+            <Label layoutX="38.0" layoutY="161.0" prefHeight="49.0" prefWidth="226.0" text="Please input file name with data" textFill="#d0bfbf">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="importButton" buttonType="RAISED" layoutX="373.0" layoutY="380.0" onAction="#handleImportButtonClick" prefHeight="39.0" prefWidth="146.0" style="-fx-background-color: #FBD694; -fx-background-radius: 5;" text="Import">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="settingsMethods" layoutY="91.0" prefHeight="459.0" prefWidth="562.0" style="-fx-background-color: #3D4956;" visible="false">
+         <children>
+            <JFXButton fx:id="saveParameters" buttonType="RAISED" layoutX="375.0" layoutY="379.0" onAction="#handleForecastButtonClick" prefHeight="39.0" prefWidth="146.0" style="-fx-background-color: #FBD694; -fx-background-radius: 5;" text="Input">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <TextField fx:id="windowLength" layoutX="282.0" layoutY="76.0" prefHeight="39.0" prefWidth="146.0" style="-fx-background-color: #95D4E8; -fx-border-color: #A684A9; -fx-border-width: 2; -fx-background-radius: 3; -fx-border-radius: 3; -fx-background-insets: 1;" />
+            <TextField fx:id="R" layoutX="282.0" layoutY="141.0" prefHeight="39.0" prefWidth="146.0" style="-fx-background-color: #95D4E8; -fx-border-color: #A684A9; -fx-border-width: 2; -fx-background-radius: 3; -fx-border-radius: 3; -fx-background-insets: 1;" />
+            <Label layoutX="61.0" layoutY="75.0" prefHeight="39.0" prefWidth="193.0" text="Please input window length  " textFill="#d0bfbf">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="61.0" layoutY="141.0" prefHeight="39.0" prefWidth="193.0" text="Please input  R  " textFill="#d0bfbf">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="M" layoutX="282.0" layoutY="202.0" prefHeight="39.0" prefWidth="146.0" style="-fx-background-color: #95D4E8; -fx-border-color: #A684A9; -fx-border-width: 2; -fx-background-radius: 3; -fx-border-radius: 3; -fx-background-insets: 1;" />
+            <Label layoutX="61.0" layoutY="202.0" prefHeight="39.0" prefWidth="193.0" text="Please input  M  " textFill="#d0bfbf">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="results" layoutY="94.0" prefHeight="459.0" prefWidth="562.0" style="-fx-background-color: #3D4956;" visible="false" />
+      <Label fx:id="initialLabel" layoutX="110.0" layoutY="234.0" prefHeight="82.0" prefWidth="375.0" text="SSA - Time Series Analysis And Prediction" textFill="#d0bfbf">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
